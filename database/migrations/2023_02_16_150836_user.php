@@ -16,7 +16,6 @@ return new class extends Migration
             $table->string('nick');
             $table->string('email');
             $table->string('password');
-            $table->integer('sex');
             $table->boolean('administrador')->default(false);
             $table->timestamps();
 

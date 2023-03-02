@@ -14,15 +14,14 @@ class UserController extends Controller
         $request->validate([
             'nick' => 'required | unique:User',
             'email' => 'required | email | unique:User',
-            'password' => 'required | confirmed',
-            'sex' => 'required'
+            'password' => 'required'
         ]);
 
         $user = new User();
         $user->nick = $request->nick;
         $user->email = $request->email;
-        $user->password = Hash::make($request->password);
-        $user->sex = $request->sex;
+        $user->password = $request->password;
+        
         $user->save();
 
         //autologin
