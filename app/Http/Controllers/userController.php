@@ -20,7 +20,7 @@ class UserController extends Controller
         $user = new User();
         $user->nick = $request->nick;
         $user->email = $request->email;
-        $user->password = $request->password;
+        $user->password = Hash::make($request->password);
         
         $user->save();
 
